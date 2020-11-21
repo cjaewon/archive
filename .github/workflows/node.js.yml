@@ -29,8 +29,9 @@ jobs:
         npm install
         npm run build
         npx next export
-        echo "archive.cjaewon.com" > out/CNAME
-
+        echo "archive.cjaewon.com" > ./out/CNAME
+        touch ./out/.nojekyll
+        
     - name: Deploy to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@3.7.1
       with: 
