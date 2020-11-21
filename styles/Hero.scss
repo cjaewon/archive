@@ -11,3 +11,13 @@
 .Hero__description {
   margin: 0;
 }
+
+.Hero__links {
+  margin-top: 0.5rem;
+
+  a {
+    padding-right: 0.25rem;
+    text-decoration: underline;
+    color: #111827;
+  }
+}

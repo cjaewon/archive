@@ -1,7 +1,11 @@
+import Link from "next/link";
+
 const Header = () => {
   return (
     <div className="Header">
-      <img src="./logo.svg" alt="Cjaewon Logo" />
+      <Link href="/">
+        <img src="./logo.svg" alt="Cjaewon Logo" />
+      </Link>
     </div>
   );
 };

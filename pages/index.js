@@ -12,6 +12,7 @@ export default function Home({ posts }) {
       <Head>
         <title>Archive - Cjaewon</title>
         <link rel="shortcut icon" type="image/png" href="/favicon-192x192.png" />
+        <meta name="description" content="Cjaewon :: 여러 플랫폼에 작성한 글들을 아카이브 해둔 공간입니다." />
       </Head>
       <main>
         <Hero />
@@ -20,7 +21,7 @@ export default function Home({ posts }) {
             <Post
               key={post.link}
               title={post.title}
-              description={post.contentSnippet || post.description}
+              description={post.contentSnippet || post.description || post['content:encodedSnippet']}
               date={post.pubDate}
               url={post.link}
             />
