@@ -1,17 +1,17 @@
 import Head from 'next/head'
+import Header from '../components/Header';
 import Hero from '../components/Hero';
 import Post from '../components/Post';
+import Template from '../components/Template';
 
-import Parser from 'rss-parser';
 import fetchRSS from '../lib/fetchRSS';
 
 export default function Home({ posts }) {
-  console.log(posts);
-
   return (
-    <>
+    <Template>
       <Head>
         <title>Archive - Cjaewon</title>
+        <link rel="shortcut icon" type="image/png" href="/favicon-192x192.png" />
       </Head>
       <main>
         <Hero />
@@ -27,12 +27,11 @@ export default function Home({ posts }) {
           )) }
         </div>
       </main>
-    </>
+    </Template>
   )
 }
 
 export async function getStaticProps(context) {
-  const parser = new Parser();
   const posts = await fetchRSS();
 
   posts.sort((a, b) => {
